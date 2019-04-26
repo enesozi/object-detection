@@ -1,8 +1,8 @@
 #!/bin/bash
-train_images="$HOME/Downloads/FLIR_ADAS_12_11_18/FLIR_ADAS/training/PreviewData"
-validation_images="$HOME/Downloads/FLIR_ADAS_12_11_18/FLIR_ADAS/validation/PreviewData"
-train_anns="$HOME/Downloads/FLIR_ADAS_12_11_18/FLIR_ADAS/training/Annotations"
-validation_anns="$HOME/Downloads/FLIR_ADAS_12_11_18/FLIR_ADAS/validation/Annotations"
+train_images="$HOME/Downloads/FLIR_ADAS/training/PreviewData"
+validation_images="$HOME/Downloads/FLIR_ADAS/validation/PreviewData"
+train_anns="$HOME/Downloads/FLIR_ADAS/training/Annotations"
+validation_anns="$HOME/Downloads/FLIR_ADAS/validation/Annotations"
 train_file="thermal_train.txt"
 valid_file="thermal_validation.txt"
 cfg_file="yolov3-thermal.cfg"
