@@ -33,10 +33,12 @@ if __name__ == '__main__':
 
                 # Yolo classes are starting from zero index
                 cat_id -= 1
-                x_center, y_center = (left + bbox_width / 2, top + bbox_height / 2)
+                x_center, y_center = (
+                    left + bbox_width / 2, top + bbox_height / 2)
                 # darknet expects relative values wrt image width&height
                 x_rel, y_rel = (x_center / width, y_center / height)
                 w_rel, h_rel = (bbox_width / width, bbox_height / height)
-                converted_results.append((cat_id,x_rel,y_rel,w_rel,h_rel))
-            with open(os.path.join(args.output_path,file_name+'.txt'), 'w+') as fp:
-                fp.write('\n'.join('%d %.6f %.6f %.6f %.6f' % res for res in converted_results))
+                converted_results.append((cat_id, x_rel, y_rel, w_rel, h_rel))
+            with open(os.path.join(args.output_path, file_name + '.txt'), 'w+') as fp:
+                fp.write('\n'.join('%d %.6f %.6f %.6f %.6f' %
+                                   res for res in converted_results))
