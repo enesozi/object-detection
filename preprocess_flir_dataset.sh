@@ -29,13 +29,6 @@ do
 printf "data/thermal/FLIR_%05d.jpeg\n" $value >> "$valid_file"
 done
 
-# Copy necessary files to the correct directories
-cp "$cfg_file"   "$PWD/darknet/build/darknet/x64/"
-cp "$train_file" "$PWD/darknet/build/darknet/x64/data/"
-cp "$valid_file" "$PWD/darknet/build/darknet/x64/data/"
-cp "$data_file"  "$PWD/darknet/build/darknet/x64/data/"
-cp "$name_file"  "$PWD/darknet/build/darknet/x64/data/"
-
 # Copy images to the correct directory
 rm -rf "$image_dir"
 mkdir "$image_dir"
@@ -48,5 +41,33 @@ python convert_coco_yolo.py "$train_anns" "$image_dir"
 python convert_coco_yolo.py "$validation_anns" "$image_dir"
 python convert_coco_yolo.py "$video_anns" "$image_dir"
 
+# Quick fix for imbalanced dataset
+[ -f "bikes.txt" ] && rm "bikes.txt"
+
+python convert_coco_yolo.py "$train_anns" . --debug
+python convert_coco_yolo.py "$validation_anns" . --debug
+python convert_coco_yolo.py "$video_anns" . --debug
+
+for iter in {1..5}
+do
+	sed p "bikes.txt" >> "bikes_new.txt"
+done
+
+mv "bikes_new.txt" "bikes.txt"
+cat "bikes.txt" >> "$train_file"
+rm "bikes.txt"
+
+# Shuffle train dataset
+shuf "$train_file" > "train_file_shuffled.txt"
+mv "train_file_shuffled.txt" "$train_file"
+
+# Copy necessary files to the correct directories
+cp "$cfg_file"   "$PWD/darknet/build/darknet/x64/"
+cp "$train_file" "$PWD/darknet/build/darknet/x64/data/"
+cp "$valid_file" "$PWD/darknet/build/darknet/x64/data/"
+cp "$data_file"  "$PWD/darknet/build/darknet/x64/data/"
+cp "$name_file"  "$PWD/darknet/build/darknet/x64/data/"
+
+
 # Download pretrained weight
-wget https://pjreddie.com/media/files/darknet53.conv.74 -O "$PWD/darknet/build/darknet/x64/darknet53.conv.74"
+#wget https://pjreddie.com/media/files/darknet53.conv.74 -O "$PWD/darknet/build/darknet/x64/darknet53.conv.74"
