@@ -1,4 +1,4 @@
-classes = 4
+classes = 3
 train   = data/thermal_train.txt
 valid   = data/thermal_validation.txt
 names   = data/thermal.names
