@@ -1,7 +1,7 @@
-# object-detection
+# Object Detection
 Object detection thermal images
 
-# Steps to follow:
+### Steps to follow:
 * **./build_docker_container.sh** (To build an nvidia-docker)
 * **./run_docker_container.sh** (To run the built nvidia-docker by name "darknet_thermal" and with mounted dataset.
 * Make sure that your gpu arch is included in [Makefile](https://github.com/enesozi/object-detection/blob/master/Makefile#L16)
