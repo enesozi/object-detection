@@ -67,7 +67,7 @@ cp "$train_file" "$PWD/darknet/build/darknet/x64/data/"
 cp "$valid_file" "$PWD/darknet/build/darknet/x64/data/"
 cp "$data_file"  "$PWD/darknet/build/darknet/x64/data/"
 cp "$name_file"  "$PWD/darknet/build/darknet/x64/data/"
-
+cp "run_all_iters.sh" "$PWD/darknet/build/darknet/x64/"
 
 # Download pretrained weight
-#wget https://pjreddie.com/media/files/darknet53.conv.74 -O "$PWD/darknet/build/darknet/x64/darknet53.conv.74"
+wget https://pjreddie.com/media/files/darknet53.conv.74 -O "$PWD/darknet/build/darknet/x64/darknet53.conv.74"
