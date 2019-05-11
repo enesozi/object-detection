@@ -1,0 +1,1 @@
+docker run --runtime=nvidia -it --name darknet_thermal -v ~/Downloads/FLIR_ADAS_12_11_18:/home/Downloads thermal:darknet

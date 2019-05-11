@@ -1,0 +1,1 @@
+nvidia-docker build --no-cache -t thermal:darknet .
