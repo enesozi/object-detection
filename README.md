@@ -1,5 +1,5 @@
 # Object Detection
-Object detection thermal images
+Object detection on thermal images
 
 ### Steps to follow:
 * **./build_docker_container.sh** (To build an nvidia-docker)
