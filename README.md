@@ -27,3 +27,5 @@ Object detection on thermal images
    Average Recall     (AR) @[ IoU=0.50:0.50 | area= large | maxDets=100 ] = 0.918  
 
 Baseline result: mAP IoU(0.5) of 0.587
+
+You can download the dataset from [here](https://mega.nz/#!j9l32aAJ!wB4pk6H_12AaCRZT5flmNKcBcpCDdfleTaMi4WA8_-0)
