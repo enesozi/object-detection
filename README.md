@@ -29,3 +29,5 @@ Object detection on thermal images
 Baseline result: mAP IoU(0.5) of 0.587
 
 You can download the dataset from [here](https://mega.nz/#!j9l32aAJ!wB4pk6H_12AaCRZT5flmNKcBcpCDdfleTaMi4WA8_-0)
+
+You can find the [blog post](https://medium.com/swlh/object-detection-on-thermal-images-4f3410a89db4) published on Medium.
